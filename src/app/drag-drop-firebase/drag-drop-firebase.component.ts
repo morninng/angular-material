@@ -3,6 +3,10 @@ import { Observable } from 'rxjs';
 
 import { AngularFirestore } from '@angular/fire/firestore';
 
+interface User {
+  name: string,
+}
+
 @Component({
   selector: 'app-drag-drop-firebase',
   templateUrl: './drag-drop-firebase.component.html',
@@ -10,12 +14,15 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class DragDropFirebaseComponent implements OnInit {
 
-  items: Observable<any[]>;
-  constructor(db: AngularFirestore) {
-    this.items = db.collection('items').valueChanges();
+  itemsA: Observable<User[]>;
+  itemsB: Observable<User[]>;
+
+  constructor(private db: AngularFirestore) {
   }
 
   ngOnInit() {
+    this.itemsA = this.db.collection<User>('items-a').valueChanges();
+    this.itemsB = this.db.collection<User>('items-b').valueChanges();
   }
 
 }

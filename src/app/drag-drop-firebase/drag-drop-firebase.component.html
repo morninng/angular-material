@@ -5,7 +5,16 @@
 
 
 <ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.aaa}}
+  <li class="text" *ngFor="let item of itemsA | async">
+    {{item.name}}
   </li>
 </ul>
+
+
+
+<ul>
+  <li class="text" *ngFor="let item of itemsB | async">
+    {{item.name}}
+  </li>
+</ul>
+
