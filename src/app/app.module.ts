@@ -9,11 +9,15 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
+import { DragDropPreviewComponent } from './drag-drop-preview/drag-drop-preview.component';
+import { DragDropConnectedSortComponent } from './drag-drop-connected-sort/drag-drop-connected-sort.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DragDropComponent
+    DragDropComponent,
+    DragDropPreviewComponent,
+    DragDropConnectedSortComponent
   ],
   imports: [
     BrowserModule,
