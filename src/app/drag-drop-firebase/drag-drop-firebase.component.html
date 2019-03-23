@@ -3,9 +3,40 @@
 </p>
 
 
+<div class="example-container">
+  <h2>itemsB</h2>
+
+  <div
+    cdkDropList
+    #todoList="cdkDropList"
+    [id]="'item-b-id'"
+    [cdkDropListData]="itemsB"
+    [cdkDropListConnectedTo]="[doneList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of itemsB" cdkDrag>{{item.name}}</div>
+  </div>
+</div>
+
+
+<div class="example-container">
+  <h2>itemsA</h2>
+
+  <div
+    cdkDropList
+    #doneList="cdkDropList"
+    [id]="'item-a-id'"
+    [cdkDropListData]="itemsA"
+    [cdkDropListConnectedTo]="[todoList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of itemsA" cdkDrag>{{item.name}}</div>
+  </div>
+</div>
+
 
 <ul>
-  <li class="text" *ngFor="let item of itemsA | async">
+  <li class="text" *ngFor="let item of itemsA">
     {{item.name}}
   </li>
 </ul>
@@ -13,7 +44,7 @@
 
 
 <ul>
-  <li class="text" *ngFor="let item of itemsB | async">
+  <li class="text" *ngFor="let item of itemsB">
     {{item.name}}
   </li>
 </ul>
