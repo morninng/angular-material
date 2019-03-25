@@ -9,13 +9,14 @@
     <h2>room B</h2>
     <div
       cdkDropList
-      #bList="cdkDropList"
       [id]="'items-b'"
       [cdkDropListData]="itemsB"
 
       class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of itemsB" cdkDrag>{{item.name}}</div>
+      <div class="example-box" *ngFor="let item of itemsB" cdkDrag>
+        <app-user-show [user]="item"></app-user-show>
+      </div>
     </div>
   </div>
 
@@ -24,7 +25,6 @@
     <h2>room A</h2>
     <div
       cdkDropList
-      #aList="cdkDropList"
       [id]="'items-a'"
       [cdkDropListData]="itemsA"
 
@@ -39,7 +39,6 @@
     <h2>room C</h2>
     <div
       cdkDropList
-      #cList="cdkDropList"
       [id]="'items-c'"
       [cdkDropListData]="itemsC"
 
