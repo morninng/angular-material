@@ -2,53 +2,12 @@
   drag-drop-firebase works!
 </p>
 
-
 <div cdkDropListGroup>
-  <div class="example-container">
-    ---- bb ---------
-    <h2>room B</h2>
-    <div
-      cdkDropList
-      [id]="'items-b'"
-      [cdkDropListData]="itemsB"
-
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of itemsB" cdkDrag>
-        <app-user-show [user]="item"></app-user-show>
-      </div>
-    </div>
-  </div>
-
-  <div class="example-container">
-    --------- aa ---------
-    <h2>room A</h2>
-    <div
-      cdkDropList
-      [id]="'items-a'"
-      [cdkDropListData]="itemsA"
-
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of itemsA" cdkDrag>{{item.name}}</div>
-    </div>
-  </div>
-
-  <div class="example-container">
-    --------- cc -----------
-    <h2>room C</h2>
-    <div
-      cdkDropList
-      [id]="'items-c'"
-      [cdkDropListData]="itemsC"
-
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of itemsC" cdkDrag>{{item.name}}</div>
-    </div>
-  </div>
-
+  <app-draggable-area [items]="itemsA" [item_name]="'items-a'" (onDrop)="drop($event)" ></app-draggable-area>
+  <app-draggable-area [items]="itemsB" [item_name]="'items-b'" (onDrop)="drop($event)"></app-draggable-area>
+  <app-draggable-area [items]="itemsC" [item_name]="'items-c'" (onDrop)="drop($event)"></app-draggable-area>
 </div>
+
 
 -------- aa ---------
 <ul>

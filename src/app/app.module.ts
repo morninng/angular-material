@@ -18,6 +18,7 @@ import { DragDropPreviewComponent } from './drag-drop-preview/drag-drop-preview.
 import { DragDropConnectedSortComponent } from './drag-drop-connected-sort/drag-drop-connected-sort.component';
 import { DragDropFirebaseComponent } from './drag-drop-firebase/drag-drop-firebase.component';
 import { UserShowComponent } from './user-show/user-show.component';
+import { DraggableAreaComponent } from './draggable-area/draggable-area.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserShowComponent } from './user-show/user-show.component';
     DragDropPreviewComponent,
     DragDropConnectedSortComponent,
     DragDropFirebaseComponent,
-    UserShowComponent
+    UserShowComponent,
+    DraggableAreaComponent
   ],
   imports: [
     BrowserModule,
