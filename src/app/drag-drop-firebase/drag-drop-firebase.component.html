@@ -3,38 +3,55 @@
 </p>
 
 
-<div class="example-container">
-  <h2>itemsB</h2>
+<div cdkDropListGroup>
+  <div class="example-container">
+    ---- bb ---------
+    <h2>room B</h2>
+    <div
+      cdkDropList
+      #bList="cdkDropList"
+      [id]="'items-b'"
+      [cdkDropListData]="itemsB"
 
-  <div
-    cdkDropList
-    #todoList="cdkDropList"
-    [id]="'item-b-id'"
-    [cdkDropListData]="itemsB"
-    [cdkDropListConnectedTo]="[doneList]"
-    class="example-list"
-    (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of itemsB" cdkDrag>{{item.name}}</div>
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of itemsB" cdkDrag>{{item.name}}</div>
+    </div>
   </div>
+
+  <div class="example-container">
+    --------- aa ---------
+    <h2>room A</h2>
+    <div
+      cdkDropList
+      #aList="cdkDropList"
+      [id]="'items-a'"
+      [cdkDropListData]="itemsA"
+
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of itemsA" cdkDrag>{{item.name}}</div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    --------- cc -----------
+    <h2>room C</h2>
+    <div
+      cdkDropList
+      #cList="cdkDropList"
+      [id]="'items-c'"
+      [cdkDropListData]="itemsC"
+
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of itemsC" cdkDrag>{{item.name}}</div>
+    </div>
+  </div>
+
 </div>
 
-
-<div class="example-container">
-  <h2>itemsA</h2>
-
-  <div
-    cdkDropList
-    #doneList="cdkDropList"
-    [id]="'item-a-id'"
-    [cdkDropListData]="itemsA"
-    [cdkDropListConnectedTo]="[todoList]"
-    class="example-list"
-    (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of itemsA" cdkDrag>{{item.name}}</div>
-  </div>
-</div>
-
-
+-------- aa ---------
 <ul>
   <li class="text" *ngFor="let item of itemsA">
     {{item.name}}
@@ -42,10 +59,16 @@
 </ul>
 
 
-
+--------- bb --------
 <ul>
   <li class="text" *ngFor="let item of itemsB">
     {{item.name}}
   </li>
 </ul>
 
+--------cc----
+<ul>
+  <li class="text" *ngFor="let item of itemsC">
+    {{item.name}}
+  </li>
+</ul>
